@@ -4,12 +4,9 @@ import io.restassured.response.Response;
 import model.Product;
 import org.hamcrest.Matcher;
 import org.junit.jupiter.api.Test;
-import org.json.*;
 
-import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
-import java.util.Map;
 
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.*;
@@ -48,6 +45,7 @@ public class ApiTests {
     @Test
     public void getAllProducts() {
         String endpoint = "http://localhost:8888/api_testing/product/read.php";
+
         Response response =
                 given()
                         .when().get(endpoint);
